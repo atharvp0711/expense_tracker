@@ -3,9 +3,9 @@ import "./Expenses.css";
 import ReactModal from 'react-modal';
 import RecentTransactions from "./RecentTransactions";
 
-const Expenses = ({walletBalance, setWalletBalance, transactions}) => {
+const Expenses = ({walletBalance, setWalletBalance, expenses,setExpenses}) => {
     
-  const [expenses , setExpenses] = useState([]);
+  // const [expenses , setExpenses] = useState([]);
   const [expenseTitle , setExpenseTitle] = useState('');
   const [expensePrice , setExpensePrice] = useState('');
   const [isModalOpen , setIsModalOpen] = useState(false);
@@ -76,8 +76,11 @@ const Expenses = ({walletBalance, setWalletBalance, transactions}) => {
         date: expenseDate,        
       };
 
-      // Updating wallet balance and total expenses
+      // Update expenses state in App.js 
+
       setExpenses((prev) => [...prev, expense]);
+
+      // Updating wallet balance and total expenses
 
       const newWalletBalance = walletBalance - price; 
       setWalletBalance(newWalletBalance);
@@ -85,7 +88,7 @@ const Expenses = ({walletBalance, setWalletBalance, transactions}) => {
       const newTotalExpense = totalExpense + price;
       setTotalExpense(newTotalExpense);
 
-      // const savedExpenses = JSON.parse(localStorage.getItem("expenses")) || [] ;
+      // Save expenses and wallet balance to LocalStorage
       localStorage.setItem("expenses" , JSON.stringify([...expenses, expense]));
       localStorage.setItem("walletBalance", newWalletBalance);
 
@@ -160,7 +163,6 @@ const Expenses = ({walletBalance, setWalletBalance, transactions}) => {
             </div>
           </form>
         </ReactModal>
-        {/* <RecentTransactions transactions={expenses}/> */}
     </div>
   );
 };

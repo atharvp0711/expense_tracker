@@ -1,16 +1,10 @@
-/* .tracker{
-    display: flex;
-    justify-content: space-between;
-    gap: 250px;
-    height: 200px; 
-    width: 100%;
-} */
 /* General app container */
 .app-container {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    color:black
-    /* background-color: #3B3B3B; */
+    /* margin: 20px; */
+    color:black;
+    overflow: hidden;
+    background-color: #7a7979;
   }
   
   /* Header */
@@ -60,17 +54,16 @@
     max-height: 100%;
   }
   /* Recent Transactions and Top Expenses */
-  .transactions-container {
-    display: flex;
-    gap: 20px;
+  .recent-transactions {
+    flex: 3; /* Takes up 3 parts of the flex container */
+    background-color: #ffffff; /* Ensure it's visible with a white background */
+    color: black; /* Text color */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    max-height: 400px; /* Prevent it from stretching too much */
+    overflow-y: auto; /* Scroll if transactions overflow */
   }
-  
-  /* .recent-transactions {
-    flex: 3; 
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-  } */
   .wallet-balance {
     height: auto; 
     min-height: 100px; 
@@ -83,7 +76,15 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
+  .transactions-container {
+    display: flex;
+    overflow-y: auto; /* Scroll if transactions overflow */
+    gap: 20px;
+    align-items: stretch; 
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #7a7979;
+  }
   /* Responsiveness */
   @media (max-width: 768px) {
     .tracker-container,

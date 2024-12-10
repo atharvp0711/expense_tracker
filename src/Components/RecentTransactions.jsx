@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./RecentTransactions.css";
 
 const RecentTransactions = ({ transactions }) => {
+  console.log("Transactions received in RecentTransactions:", transactions);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
 
@@ -31,7 +32,9 @@ const RecentTransactions = ({ transactions }) => {
 
   return (
     <div className="recent-transactions">
-      <h2>Recent Transactions</h2>
+      <div>
+        <h2>Recent Transactions</h2>
+      </div>
       <div className="transactions-list">
         {currentTransactions.map((transaction, index) => (
           <div key={index} className="transaction-item">
@@ -50,7 +53,7 @@ const RecentTransactions = ({ transactions }) => {
         <button onClick={prevPage} disabled={currentPage === 1}>
           ←
         </button>
-        <p>{currentPage}</p>
+        <h3>{currentPage}</h3>
         <button onClick={nextPage} disabled={currentPage === totalPages}>
           →
         </button>

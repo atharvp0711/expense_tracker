@@ -1,0 +1,53 @@
+.expense-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .pieChart{
+    width: 100%;
+    height: 200px;
+    min-width: 0px; 
+    margin-top: -20px; /* To shift the chart upwards */
+  }
+
+  .pieChart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px; /* Adjust height */
+    margin-top: 20px;
+    background-color: #fff; /* Optional for better visibility */
+    border-radius: 8px; /* Optional styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional styling */
+  }
+  
+  .category-summary {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start; */
+  }
+  
+  .category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .category-color {
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  
+  .category-item span {
+    font-size: 14px;
+  }
+  

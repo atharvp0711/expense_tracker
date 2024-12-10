@@ -1,7 +1,6 @@
 import React , {useState , useEffect} from 'react';
 import ReactModal from 'react-modal';
 import "./WalletBalance.css";
-// import { useEffect } from 'react';
 
 const WalletBalance = ({walletBalance , setWalletBalance}) => {
 
@@ -16,7 +15,7 @@ const WalletBalance = ({walletBalance , setWalletBalance}) => {
       if(savedBalance){
         setWalletBalance(parseInt(savedBalance , 10));
       }
-    } , []);
+    } , [setWalletBalance]);  //includes setWalletBalance to avoid re-renders
 
   // Save Wallet Balance to local storage whenever it changes
 
@@ -45,7 +44,12 @@ const WalletBalance = ({walletBalance , setWalletBalance}) => {
         alert("Please enter a valid amount to add");
         return ; 
       }
-      setWalletBalance((prev) => prev + amount) ;
+      
+      setWalletBalance((prev) => {
+        const updatedBalance = prev + amount
+        localStorage.setItem("walletBalance", updatedBalance); // Sync immediately to localStorage
+        return updatedBalance;
+      }) ; // update parent state
       closeModal() ;
     }
 

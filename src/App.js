@@ -5,7 +5,7 @@ import ExpenseTracker from "./ExpenseTracker";
 import Expenses from "./Components/Expenses";
 import ExpenseSummary from "./Components/ExpenseSummary";
 import RecentTransactions from "./Components/RecentTransactions";
-import TopExpenses from "./Components/TopExpenses"; // Placeholder for future code
+import TopExpenses from "./Components/TopExpenses"; 
 
 ReactModal.setAppElement("#root");
 
@@ -37,11 +37,9 @@ const App = () => {
 
       {/* Recent Transactions and Top Expenses Section */}
       <main className="transactions-container">
-        {/* <div className="recent-transactions">
-        </div> */}
         <RecentTransactions transactions={expenses} />
         <div className="top-expenses">
-          <TopExpenses />
+          <TopExpenses expenses={expenses} />
         </div>
       </main>
     </div>

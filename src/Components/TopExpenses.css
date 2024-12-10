@@ -1,0 +1,13 @@
+.top-expenses {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff; /* Optional */
+    border-radius: 8px; /* Optional */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional */
+  }
+  
+  .top-expenses h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
