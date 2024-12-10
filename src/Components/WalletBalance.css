@@ -1,0 +1,66 @@
+/* .walletBalance{
+    margin-left: 50px ;
+    width: 350px; 
+} */
+.walletBalance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .income {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .income:hover {
+    background-color: #45a049;
+  }
+  
+  /* Modal styles */
+  .modal {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .addIncomeBtn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .cancelBtn {
+    background-color: #f44336;
+    color: white;
+  }
+  

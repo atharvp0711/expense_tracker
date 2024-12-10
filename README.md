@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+In React, react-modal needs to be told which part of the DOM is the root element. Do this in App.js:
+ReactModal.setAppElement("#root");    =====>>> Bind the modal to the root element 
+
 ## Available Scripts
 
 In the project directory, you can run:
