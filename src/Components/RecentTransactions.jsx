@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./RecentTransactions.css";
+import { TiDeleteOutline } from "react-icons/ti";
+import { MdEdit } from "react-icons/md";
+
 
 const RecentTransactions = ({ transactions }) => {
   console.log("Transactions received in RecentTransactions:", transactions);
@@ -30,6 +33,10 @@ const RecentTransactions = ({ transactions }) => {
     if (currentPage > 1) setCurrentPage((prev) => prev - 1);
   };
 
+  const deleteExpenseFunction = () => {
+    
+  }
+
   return (
     <div className="recent-transactions">
       <div>
@@ -45,7 +52,13 @@ const RecentTransactions = ({ transactions }) => {
               <p className="transaction-title">{transaction.title}</p>
               <p className="transaction-date">{new Date(transaction.date).toLocaleDateString()}</p>
             </div>
-            <div className="transaction-amount">₹{transaction.price}</div>
+            <div className = "amount-icons">
+              <div className="transaction-amount">₹{transaction.price} </div>
+              <div className = "icons">
+                <TiDeleteOutline size={30} onClick={deleteExpenseFunction} />
+                <MdEdit size={30} onClick={modifyExpenseFunction} style={{marginLeft : "10px"}} />
+              </div>
+            </div>
           </div>
         ))}
       </div>
